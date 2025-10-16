@@ -1,0 +1,339 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color none, color none;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --button-bg: #6600ff;
+    --button-text: #ffffff;
+    --form-bg: #f9f9f9;
+    --form-border: #cccccc;
+}
+
+a {
+    color: #ff5733;  
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --button-bg: #6600ff;
+    --form-bg: #1e1e1e;
+    --form-border: #333333;
+}
+
+/* General Styles for Containers */
+.theme-toggle-container {
+    position: fixed; 
+    top: 20px;
+    right: 20px;
+    background-color: var(--form-bg);
+    border: 1px solid var(--form-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Theme Toggle Icon */
+#theme-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--button-bg);
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for icon */
+#theme-icon:hover {
+    color: #4402a8;
+}
+
+/* Responsive Design: Mobile View */
+@media (max-width: 600px) {
+    /* Adjust the positioning of the theme toggle container */
+    .theme-toggle-container {
+        top: 10px;  /* Adjust for better spacing on small screens */
+        right: 10px; /* Adjust for better spacing on small screens */
+        padding: 5px;
+    }
+
+    /* Adjust the form container for better mobile view */
+    .container {
+        max-width: 90%;
+        padding: 20px;
+        margin-top: 70px; /* Adjust this value to prevent overlap with the theme toggle */
+    }
+
+    /* Prevent containers from overlapping */
+    body {
+        padding-top: 10px; /* Add some padding to prevent the theme button from covering content */
+    }
+
+    /* Make sure form fields are not squished */
+    .form-group input,
+    .phone-group select {
+        width: 100%;
+    }
+}
+
+/* Container */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--form-bg);
+    border: 1px solid var(--form-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+    margin: 15px 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input Fields and Select */
+.form-group input,
+.phone-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--form-border);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea { 
+    resize: vertical; 
+}
+
+/* Phone Group */
+.phone-group {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-group select {
+    flex: 1;
+    max-width: 30%; /* Restrict the dropdown width */
+}
+
+.phone-group input {
+    flex: 3;
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4402a8;
+}
+
+/* Toggle Form Link */
+.toggle-form {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.toggle-form a {
+    color: var(--button-bg);
+    text-decoration: none;
+}
+
+.toggle-form a:hover {
+    text-decoration: underline;
+}
+
+/* Password Check */
+.password-check,.email-check {
+    font-size: 12px;
+    margin-top: 5px;
+    color: red;
+}
+
+.password-check.valid {
+    color: green;
+}
+
+#confirm-password-check {
+    font-size: 12px;
+    margin-top: 5px;
+    color: red;
+}
+
+/* Styling for the password container */
+.password-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+/* Styling for the input field */
+#login-password {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Add space for the eye icon */
+    border: 1px solid var(--form-border);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Forgot password link styling */
+.forgot-password {
+    font-size: 14px;
+    color: var(--button-bg);
+    text-decoration: none;
+    display: block;
+    margin-top: 10px; /* Space between the input field and the link */
+    text-align: right; /* Right-align the link */
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Dropdown Dark Mode Fix */
+/* Override styles for dark mode with intl-tel-input */
+body.dark-mode .iti__flag-container {
+    background-color: var(--form-bg) !important; /* Dark background for the dropdown */
+    color: var(--text-color) !important;        /* Text color for dropdown */
+    border: 1px solid var(--form-border) !important;
+}
+
+body.dark-mode .iti__country-list {
+    background-color: var(--form-bg) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--form-border) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .iti__country-list .iti__country {
+    background-color: var(--form-bg) !important;
+    color: var(--text-color) !important;
+}
+
+body.dark-mode .iti__country-list .iti__country:hover,
+body.dark-mode .iti__country-list .iti__country.iti__highlight {
+    background-color: #333333 !important; /* Hover effect in dark mode */
+    color: var(--text-color) !important;
+}
+
+/* Adjust dropdown scrollbar for dark mode */
+body.dark-mode .iti__country-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark-mode .iti__country-list::-webkit-scrollbar-thumb {
+    background-color: #444444; /* Darker scrollbar */
+    border-radius: 4px;
+}
+
+body.dark-mode .iti__country-list::-webkit-scrollbar-track {
+    background-color: #222222;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        max-width: 90%;
+        padding: 20px;
+    }
+    .phone-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Popup Dialog Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background with some transparency */
+    backdrop-filter: blur(5px); /* Apply blur effect behind the popup */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: var(--form-bg);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--form-border);
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup h3 {
+    margin-bottom: 10px;
+}
+
+.popup p {
+    margin-bottom: 20px;
+}
+
+.popup button {
+    width: 100%;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #4402a8;
+}

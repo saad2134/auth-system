@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+    <div class="theme-toggle-container">
+        <span id="theme-icon" onclick="toggleTheme()">☀️</span>
+    </div>
+
+    <div class="container">
+        <h2 id="form-title">Login</h2>
+
+        <div id="login-section">
+            <div class="form-group">
+                <label for="login-identifier">Email or Phone</label>
+                <input type="text" id="login-identifier" placeholder="Enter your email or phone (with ISD code)">
+            </div>
+
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="login-password" placeholder="Enter your password">
+                    <span id="toggle-password" class="eye-icon">👁️</span>
+                </div>
+                <a href="#" class="forgot-password" onclick="showPopup('Coming Soon!')">Forgot Password?</a>
+            </div>
+
+            <button onclick="handleLogin()">Login</button>
+
+            <p class="toggle-form">Need an account? <a href="#" onclick="showRegisterForm()">Register</a></p>
+
+        </div>
+
+        <div id="register-section" style="display: none;">
+            <div class="form-group">
+                <label for="register-name">Full Name *</label>
+                <input type="text" id="register-name" placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="register-email">Email *</label>
+                <input type="email" id="register-email" placeholder="Enter your email" oninput="validateEmail()">
+                <p id="email-check" class="email-check" style="display: none;">✖ Invalid email.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="register-phone">Phone *</label>
+                <div class="phone-group">
+                    <input type="text" id="register-phone" placeholder="Enter your phone number">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="register-password">Password *</label>
+                <input type="password" id="register-password" placeholder="Create a password"
+                    onfocus="showPasswordCondition()" onblur="hidePasswordCondition()" oninput="validatePassword()">
+                <p id="password-check" class="password-check" style="display: none;">✖ Password must be at least 8
+                    characters.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password *</label>
+                <input type="password" id="confirm-password" placeholder="Re-enter your password"
+                    oninput="validatePassword()">
+                <p id="password-match" class="password-check" style="display: none;">✖ Passwords do not match.</p>
+            </div>
+
+            <button id="reg-button" onclick="handleRegister()">Register</button>
+
+            <p class="toggle-form">Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+        </div>
+    </div>
+
+    <div class="popup" id="popupDialog">
+        <div class="popup-content">
+            <h3>Alert</h3>
+            <p id="popupMessage">This is a custom alert message.</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="phone.js"></script>
+
+</body>
+
+</html>
