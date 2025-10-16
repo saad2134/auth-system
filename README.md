@@ -2,7 +2,7 @@
 
 A sleek, responsive authentication portal with dark/light theme support, built with Flask backend and vanilla JavaScript frontend.
 
-![Auth Portal](https://img.shields.io/badge/Status-Ready%20to%20Deploy-green)
+![Auth System](https://img.shields.io/badge/Status-Ready%20to%20Deploy-green)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Flask](https://img.shields.io/badge/Flask-2.0%2B-lightgrey)
 
@@ -38,8 +38,8 @@ A sleek, responsive authentication portal with dark/light theme support, built w
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/auth-portal.git
-   cd auth-portal
+   git clone https://github.com/saad2134/auth-system.git
+   cd auth-system
    ```
 
 2. **Install dependencies**
